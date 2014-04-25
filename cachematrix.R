@@ -37,3 +37,24 @@ cacheSolve <- function(x, ...) {
         x$setsolve(m)
         m
 }
+
+
+## Sample output from Rstudio>> > x
+##  >x
+##  [,1] [,2]
+##  [1,]    1    3
+##  [2,]    2    4
+##  > a<-makeCacheMatrix(x)
+##  > class(x) #check class
+##  [1] "matrix"
+##  > class(a) #confirm list
+##  [1] "list"
+##  > class(a$get)
+##  [1] "function"
+##  > b<-cacheSolve(a)
+##  > b              # first run output
+##  [,1] [,2]
+##  [1,]   -2  1.5
+##  [2,]    1 -0.5
+##  > b<-cacheSolve(a)    # second run output
+##  getting cached data   # result taken from cache
